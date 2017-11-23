@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="jpa-example:war exploded">
+    <output-path>$PROJECT_DIR$/target/jpa-example</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="jpa-example" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.sun.faces:jsf-api:2.1.11" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.1" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/jpa-example/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="jpa-example/web/Web" />
+    </root>
+  </artifact>
+</component>
