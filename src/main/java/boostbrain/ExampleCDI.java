@@ -15,7 +15,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Created by BoostBrain on 24.02.2017.
+ * Created by Lord Merciful God
  */
 
 @Named

@@ -9,7 +9,7 @@ import javax.persistence.Query;
 import java.util.List;
 
 /**
- * Created by BoostBrain on 24.02.2017.
+ * Created by Lord Merciful God
  */
 
 @Stateless

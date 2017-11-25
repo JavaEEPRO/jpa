@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
- * Created by BoostBrain on 24.02.2017.
+ * Created by Lord Merciful God
  */
 
 @Entity
