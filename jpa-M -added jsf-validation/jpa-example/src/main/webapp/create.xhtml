@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+
+</h:head>
+<h:body>
+    <h:form>
+        <h:panelGrid columns="3" layout="grid">
+            <h:outputLabel for="log" value="Login: " title="login..."/>
+            <h:inputText id="log" value="#{exampleCDI.login}" title="login..." required="true" requiredMessage="login field cant be empty"/>
+
+            <h:message id="m1" for="log" style="color:red"/>
+
+            <h:outputLabel for="pwd" value="Password: " title="password..."/>
+            <h:inputText id="pwd" value="#{exampleCDI.password}" title="password..." required="true" requiredMessage="password field must not be empty"/>
+            <h:message id="m2" for="pwd" style="color:red"/>
+
+            <h:outputLabel for="ustaRankingId" value="Enter USTA Ranking: " title="USTA Ranking"/>
+            <h:inputText id="ustaRankingId" value="#{exampleCDI.ustaRanking}" title="USTA Ranking"
+                         size="3" validatorMessage="Registration Open Only for Level 3.0 to 4.5">
+                <f:validateDoubleRange minimum="3.0" maximum="4.5" for="ustaRankingId"/>
+                <!--f:validateRegex pattern="[3-4]\.?[05]" for="ustaRankingId"/-->
+            </h:inputText>
+            <h:message id="m6" for="ustaRankingId" style="color:red"/>
+
+            <h:outputLabel for="sexId" value="*Sex:" title="Sex"/>
+            <h:selectOneRadio id="sexId" value="#{exampleCDI.sex}" title="Sex" tabindex="5">
+                <f:selectItem itemLabel="M" itemValue="M" />
+                <f:selectItem itemLabel="F" itemValue="F" />
+                <f:validateBean disabled="false"/>
+            </h:selectOneRadio>
+            <h:message id="m3" for="sexId" style="color:red"/>
+
+           
+
+            <h:outputText value="Action: "/>
+            <h:commandLink value="Create" action="#{exampleCDI.createUser()}"/>
+
+
+
+        </h:panelGrid>
+    </h:form>
+    <br/><br/>
+
+
+    <br/><br/>
+    <h:form method="GET" action="http://localhost:8080/jpa-example/index.html" >
+        <h:commandButton value="return home" type="submit" />
+    </h:form>
+</h:body>
+</html>
