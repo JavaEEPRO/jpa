@@ -1,0 +1,758 @@
+<!DOCTYPE html> <!--SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring3-3.dtd"-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Фінальний тест - for homepage(HTML-валідація)</title>
+    <link id="style1"  rel="stylesheet" href="css/style.css"/>
+
+    <script src="js/jquery-3.2.1.js"/>
+    <script id="scrip1"  src="js/script.js"></script>
+</head>
+<body>
+    <header>
+
+    <div id="main">
+
+        <div id="logocontainer">
+
+            <div id="logo"></div>
+
+            <div id="imglogo">
+
+        <div class="stage1">
+        <div class="cubespinner">
+            <div class="face1 p1">Passover </div>
+            <div class="face2">Jesus </div>
+            <div class="face3 p1">Our </div>
+            <div class="face4">Jesus </div>
+            <div class="face5 p1">Passover </div>
+            <div class="face6">Our </div>
+        </div>
+    </div>
+
+            </div ><h3 id="namelogo" onclick="PopUpShowAbout()" title="About Him"><i>Resurrected One</i></h3><div class="lightning1"></div><div class="lightning3"><div class="lightning4"></div></div></div>
+
+
+        <div id="import" onclick="PopUpShowImport()" title="important messages">!<div id="lightning2"></div></div>
+
+        <div id="rightblock">
+        <div id="settings" onclick="PopUpShowSetup()" title="configure basic settings">setup</div>
+        <div class="time"></div>
+        </div>
+
+    </div>                                                 <!--end of MAIN-->
+
+
+<div id="sec">
+
+
+    <div id="diodecontainer"><div class="diode"><div class="circle"></div></div><form action="index.html"><button id="bh" class="mydiv" type="submit" title="this button quickly delivers You to Main Page of Portal (You are already here)">Home</button></form></div>
+
+
+
+    <div id="logf"><form id="log" onsubmit="submitFunction()"><input id="uname" title="unique username" placeholder="Login" type="text"/>
+                         <input id="pwd" title="protected field" placeholder="Password" type="password"/>
+                         <div id="blockpane"><input id="lvs" title="logging in using social account" type="button" onclick="PopUpShowSoc()" value="log via social "/><div id="bns"><input id="sb" type="submit" title="click to log in" value="Enter Portal"/><div id="cboxntitle"><input type="checkbox" id="chb" checked="checked" name="rem" value="remember me"/>
+                                                 <div id="remem">Remember me</div>
+   </div></div> </div></form></div>
+
+    <div id="vips">
+
+
+        <div id="regtitle" onclick="PopUpShow()">register</div>
+        <div id="arrow" class="spinner" onclick="PopUpShow()"></div>
+        <input type="button" id="vip" title="register as VIP user" onclick="PopUpShow()" value="V i P" />
+        <input type="button" id="vipplus" value=" plus" title="became VIP PLUS user" onclick="PopUpShow2()"/>
+
+
+
+    </div>
+
+
+    <div id="srchcontainer"><div id="bextsearch"><input onclick="PopUpShow3()" title="Set Up my Extended Search properties ()" type="button" id="extend" value=" Configure  Extended  Search"/></div> <div id="srch"><input id="spterm" type="text" name="spterm" placeholder="Search..."/><div id="spresult">&nbsp;</div></div></div>
+
+
+<div id="lngselnsun">
+
+    <div id="blink"></div>
+
+    <div id="sun"></div>
+
+    <div id="langsel" class="dropdown">
+        <div class="dropbtn">EN</div>
+        <div class="dropdown-content">
+            <a href="http://www.google.com" class="items" id="en" target="_blank">EN</a>
+            <a href="http://www.vk.com"  class="items" id="ru" target="_blank">RU</a>
+            <a href="http://www.vk.com"  class="items" id="ua" target="_blank">UA</a>
+            <a href="http://www.vk.com"  class="items" id="sk" target="_blank">SK</a>
+            <a href="indexcz.html"  class="items" id="cz" title="чеська мова">CZ</a>
+            <a href="http://www.vk.com"  class="items" id="zak"  target="_blank">ZAK</a>
+        </div>
+    </div>
+
+</div>
+
+
+    <div id="calncl"><table id="calendar2">
+        <thead>
+        <tr><td>‹</td><td colspan="5"></td><td>›</td></tr>
+        </thead>
+        <tr><td>Mo</td><td>Tu</td><td>We</td><td>Th</td><td>Fr</td><td>Sa</td><td>Su</td></tr>
+        <tbody id="test1"></tbody>
+    </table>
+    </div>
+
+    <div id="rqc" onclick="PopUpShow4()" title="press, an we'll call You shortly"><img id="ph" src="images/ph.png" width="35px" height="34px"/>Request Call </div>
+
+
+
+</div>
+</header>
+
+
+
+
+
+
+
+    <article>
+
+
+        <!-- popup LOGGING VIA SOCIALS-->
+        <div class="b-popup" id="popupsoc">
+            <div class="b-popup-content"><h3 id="ltitl" class="head1">Logging Using Social Account</h3>
+                <div id="controlssoc">
+                    <div class="minursoc" title="Minimize Window" onclick="PopUpHideSoc()"></div>
+                    <div class="closersoc" title="exit from Logging Via Socials Wizard"
+                         onclick="PopUpHideSoc()"></div>
+                </div>
+                <br/>
+                <div class="bordercontainer">Choose Your simpliest way You may use to Log In:<br/>
+                    <div id="socbuttonscontainer">
+                        <div id="scon" class="sociacont">
+                            <div id="innsocblock" class="blocksoc">
+                                <form class="commonforms"><input title="Facebook login" type="text" id="loginfacebook"/><input
+                                        title="password" type="password" id="passfb"/></form>
+                            </div>
+                        </div>
+                        <div id="scon1" class="sociacont">
+                            <div id="innsocblock1" class="blocksoc">
+                                <form class="commonforms"><input title="VK login" type="text" id="loginvk"/><input
+                                        title="password" type="password" id="passvk"/></form>
+                            </div>
+                        </div>
+                        <div id="scon2" class="sociacont">
+                            <div id="innsocblock2" class="blocksoc">
+                                <form class="commonforms"><input title="OK login" type="text" id="loginok"/><input
+                                        title="password" type="password" id="passok"/></form>
+                            </div>
+                        </div>
+                         <div id="scon3" class="sociacont">
+                            <div id="innsocblock3" class="blocksoc">
+                                <form class="commonforms"><input title="@ login" type="text" id="loginmymir"/><input
+                                        title="password" type="password" id="passmm"/></form>
+                            </div>
+                        </div>
+                        <div id="scon4" class="sociacont">
+                            <div id="innsocblock4" class="blocksoc">
+                                <form class="commonforms"><input title="Google+ login " type="text"
+                                                                 id="logingoogleplus"/><input title="password"
+                                                                                              type="password"
+                                                                                              id="passgp"/></form>
+                            </div>
+                        </div>
+                        <div id="scon5" class="sociacont">
+                            <div id="innsocblock5" class="blocksoc">
+                                <form class="commonforms"></form>
+                            </div>
+                        </div>
+                        <div id="scon6" class="sociacont">
+                            <div id="innsocblock6" class="blocksoc">
+                                <form class="commonforms"><input title="Instagram login" type="text" id="logininstagr"/><input
+                                        title="password" type="password" id="passin"/></form>
+                            </div>
+                        </div>
+                        <div id="scon7" class="sociacont">
+                            <div id="innsocblock7" class="blocksoc">
+                                <form class="commonforms"><input title="Pinterest login" type="text"
+                                                                 id="loginpinterest"/><input title="password"
+                                                                                             type="password"
+                                                                                             id="passpi"/></form>
+                            </div>
+                        </div>
+                        <div id="scon8" class="sociacont">
+                            <div id="innsocblock8" class="blocksoc">
+                                <form class="commonforms"><input title="Skype login" type="text" id="loginskype"/><input
+                                        title="password" type="password" id="passsk"/></form>
+                            </div>
+                        </div>
+                        <div id="scon9" class="sociacont">
+                            <div id="innsocblock9" class="blocksoc">
+                                <form class="commonforms"><input title="Twitter login" type="text"
+                                                                 id="logintwitter"/><input title="password"
+                                                                                           type="password" id="passtw"/>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="scon0" class="sociacont">
+                            <div id="innsocblock0" class="blocksoc">
+                                <form class="commonforms"><input title="Yahoo login" type="text" id="loginyahoo"/><input
+                                        title="password" type="password" id="passya"/></form>
+                            </div>
+                        </div>
+                        <div id="scon01" class="sociacont">
+                            <div id="innsocblock01" class="blocksoc">
+                                <form class="commonforms"></form>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="butsocial"><input id="loginsoc" type="submit" onclick="submitFunction()"
+                                               title="click to log in through Social Networks"
+                                               value="Enter Using Your Social Network Account"/><input id="cancellogsoc"
+                                                                                                       type="button"
+                                                                                                       title="click to exit"
+                                                                                                       value="Cancel Logging Through Socials"
+                                                                                                       onclick="PopUpHideSoc()"/>
+                    </div>
+                </div>
+            </div>
+
+        <div class="b-popup">
+            Read <a class="vipplusredir" onclick="PopUpShow5a()"
+                    title="click here to read Therms and Conditions" href="#"> Therms and Conditions</a> and <a
+                class="vipplusredir" onclick="PopUpShow5()" title="click here to see Our Privacy Policy"
+                href="#"> Privacy Policy</a> first. Pressing "Enter" means that You completely agree with it. <a
+                class="vipplusredir" onclick="PopUpHideSoc()" title="close this wizard" href="#">No, i don't
+            agree, exit</a>
+        </div>
+        </div>
+        <!-- end of popup LOGGING VIA SOCIALS-->
+
+        <!--popup registration -VIP-->
+        <div class="b-popup" id="popup1">
+            <div class="b-popup-content"><h3 id="rtitl" class="head1">Free Registration</h3><div id="controls"><div class="minu" title="Minimize Window" onclick="PopUpHide()"></div><div class="close" title="Exit VIP Registration" onclick="PopUpHide()"></div></div>
+                <br/><div class="bordercontainer">(became free VIP user and explore free Prognoses from our Authors)<form id="regvip"><br/><input class="popvipinputs" type="text" placeholder="Login"/><br/><input  class="popvipinputs" type="text" placeholder="First name"/><input  class="popvipinputs" type="text" placeholder="Second name"/><input  class="popvipinputs" type="text" placeholder="Last name"/><input  class="popvipinputs" type="date" placeholder="Birth date"/><br/><input class="popvipinputs"  type="email" placeholder="Email"/><input class="popvipinputs"  type="number" placeholder="Phone number"/><br/><input  class="popvipinputs" type="password" placeholder="Password"/><input class="popvipinputs"  type="password" placeholder="Password (confirm)"/><div id="butregvip"><input id="submitregistration" type="submit" onclick="submitFunction()" title="click to register at Pro Gnosis" value="Register FREE"/><input id="cancelregistration" type="button" title="click to exit" value="Cancel Registration" onclick="PopUpHide()"/></div></form></div>
+                Try also <a class="vipplusredir" onclick="PopUpShow2(), PopUpHide()" title="Became VIP Plus" href="#">VIP PLUS Registration </a>(for 1), and You'll be able to see <a class="vipplusredir"  title="most Selective Forecasts" href="#">Extra Quality Prognoses</a>
+            </div>
+        </div>
+        <!-- end of popup registration -VIP-->
+
+
+        <!--popup registration -VIP PLUS-->
+        <div class="b-popup" id="popup2">
+            <div class="b-popup-content"><h3 id="rtit2" class="head1">VIP Plus Registration</h3><div id="controls2"><div class="minu2" title="Minimize Window" onclick="PopUpHide2()"></div><div class="close2" title="Exit VIP Plus Registration" onclick="PopUpHide2()"></div></div>
+                <br/><br/><div id="bordercontainer">Thank You for choosing "VIP PLUS" User registration mode!<br/>and You'll have at Your hand all Prognoses from our Authors<br/><br/><form id="regvipplus"><input  class="popvipinputs" type="text" placeholder="Login"/><br/><input  class="popvipinputs" type="text" placeholder="First name"/><input  class="popvipinputs" type="text" placeholder="Second name"/><input  class="popvipinputs" type="text" placeholder="Last name"/><input  class="popvipinputs" type="date" placeholder="Birth date"/><br/><input  class="popvipinputs" type="email" placeholder="Email"/><input  class="popvipinputs" type="number" placeholder="Phone number"/><br/><input  class="popvipinputs" type="password" placeholder="Password"/><input  class="popvipinputs" type="password" placeholder="Password (confirm)"/><div id="butregvippl"><input id="submitregistration2" type="submit" title="click to register at Pro Gnosis" value="Register as VIP Plus"  onclick="submitFunction()"/><input id="cancelregistration2" type="button" title="click to exit" value="Cancel Registration" onclick="PopUpHide2()"/></div></form></div>
+                Clicking on "Reister as VIP Plus" You are confirming, that You agreeing with Our <a class="privacypolit" onclick="PopUpShow5()" title="Please, click and read Our Therms And Conditions" href="#">Privacy Policy</a> and You are at least 18 years old. <a class="leave" onclick="PopUpHide2()" title="exit VIP Plus Registration" href="#">No, i don't agree, i'm leaving</a>
+            </div>
+        </div>
+        <!-- end of popup registration -VIP PLUS-->
+
+
+
+
+
+        <!--popup CONFIGURE SEARCH PROPERTIES-->
+
+        <div class="b-popup" id="popupcsp">
+            <div class="b-popup-content"><h3 id="stit" class="head1">Configure Search Properties</h3><div id="controls3"><div class="minu2" title="Minimize Window" onclick="PopUpHide3()"></div><div class="close2" title="Exit from search-properties configuration wizard" onclick="PopUpHide3()"></div></div>
+                <br/><br/><div class="bordercontainercsp">You may set up Your own advanced search configuration<br/><br/><div id="contentwizard"><div id="doublecontainercsp"><div id="leftcsp"><div id="lucsp"><div id="varsearch"><div id="titlef" class="itemsvs"><i>Find results:</i></div><div  class="itemsvs">- with all of the words</div><div class="itemsvs">- with the exact phrase</div><div class="itemsvs">- at least one of words</div><div class="itemsvs">- without  the  words</div></div><div id="nvarsearch"><div id="titleopf" class="itemsnvs"></div><div  class="itemsnvs">
+                    <!--INPUTS-->     <form id="connected" name="search2"><input id="spterm2" name="search2" placeholder="Search..." class="cspinputs" type="text"/></form></div><div class="itemsnvs"><input id="field2" class="cspinputs" type="text"/></div><div class="itemsnvs"><input id="field3" class="cspinputs" type="text"/></div><div class="itemsnvs"><input id="field4" class="cspinputs" type="text"/></div></div></div>
+
+                    <div id="ldcsp"><div id="ldit1" class="ldelement">Return pages written in:
+                        <div class="dropdowncsp">
+                            <span id="csplanguage">  any language v</span>
+                            <div id="csplist1" class="dropdowncsp-content">
+                                <div class="scplistelementcontainer"><a class="csplng" href="#">any language</a></div>
+                                <div class="scplistelementcontainer"><a class="csplng" href="#">English</a></div>
+                                <div class="scplistelementcontainer"><a class="csplng" href="#">Ukrainian</a></div>
+                                <div class="scplistelementcontainer"><a class="csplng" href="#">Russian</a></div>
+                                <div class="scplistelementcontainer"><a class="csplng" href="#">Hebrew</a></div>
+                                <div class="scplistelementcontainer"><a class="csplng" href="#">Greek</a></div>
+                                <div class="scplistelementcontainer"><a class="csplng" href="#">Romanian</a></div>
+                                <div class="scplistelementcontainer"><a class="csplng" href="#">Slovenska</a></div>
+                            </div>
+                        </div></div>
+                        <div id="ldit2" class="ldelement">
+                            <div class="dropdowncsp">
+                                <span id="cspfformat"> v Only </span>
+                                <div class="dropdowncsp-content">
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">Only</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">Don't</a></div>
+                                </div>
+                            </div>
+                            return results of the file format:
+                            <div class="dropdowncsp">
+                                <span id="cspfformat2">  any format v</span>
+                                <div class="dropdowncsp-content">
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">any format</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">Adobe Acrobat PDF (.pdf)</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">Adobe Postscript (.ps)</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">Autodesk DWF (.dwf)</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">Google Earth KML (.kml)</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">Google Earth KMZ (.kmz)</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">Microsoft Excel (.xls)</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">Microsoft Powerpoint (.ppt)</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">Microsoft Word (.doc)</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">Rich Text Format (.rtf)</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">Shockwave Flash (.swf)</a></div>
+                                </div>
+                            </div>
+                        </div><div id="ldit3" class="ldelement">Return web pages first seen in the
+                            <div class="dropdowncsp">
+                                <span id="csptime">  any time v</span>
+                                <div class="dropdowncsp-content">
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">any time</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">last hour</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">last 12 hours</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">last 24 hours</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">last week</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">last month</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">last 3 month</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">last half-year</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">last year</a></div>
+                                </div>
+                            </div>
+                        </div><div id="ldit4" class="ldelement">Return results where my therms occur
+                            <div class="dropdowncsp">
+                                <span id="cspoccur">  anywhere in the page v</span>
+                                <div class="dropdowncsp-content">
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">anywhere in the page</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">in the headers</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">in the articles</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">in the URL</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">in the links</a></div>
+                                </div>
+                            </div>
+                        </div><div id="ldit5" class="ldelement">
+
+
+                            <div class="dropdowncsp">
+                                <span id="cspdomain"> v Only </span>
+                                <div class="dropdowncsp-content">
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">Only</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">Don't</a></div>
+                                </div>
+                            </div>
+                            return results from the site or domain<input id="cspdomain2" placeholder="e.g.вальцанути.net" title="for example ir.net.ua or .com" type="text"/></div><div id="ldit6" class="ldelement">Return results that are
+
+                            <div class="dropdowncsp">
+                                <span id="csplicense">  not filtered by license v </span>
+                                <div class="dropdowncsp-content">
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">  not filtered by license v </a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">only most revelant results</a></div>
+                                    <div class="scplistelementcontainer"><a class="csplng" href="#">filter results of frank content</a></div>
+                                </div>
+                            </div>
+                            <a href="#">more info</a>
+
+                        </div><div id="ldit7" class="ldelement">Safe Search<input id="cspfiltering" type="radio" name="cspfilt" checked="" value="nofilter"/>dont use filters<input id="cspfiltering2" type="radio" name="cspfilt" value="filterprotectedsearch"/>filtered by <a href="#">ProtectedSearch</a></div></div></div>
+
+
+                    <!--RIGHT SEARCH-BAR OF CSP-popup-->
+                    <div id="rightcsp">
+                        <form><input type="button" value="Start Advanced Search" id="runexsearch"/></form><div id="spresult2">search returned results...</div>
+                    </div></div><div id="rememberconfcontainer"><form id="rememberconfiguration"><input id="remembersearchconf" class="csppane" type="submit" title="next time use this configuration" value="Remember this search configuration"  onclick="submitFunction()"/><input id="cancelces"  class="csppane" type="button" title="click to exit" value="Cancel Configuration Wizard" onclick="PopUpHide3()"/></form></div></div><br/>
+                Use some properties list: <a class="privacypolit" title="add own user's configuration to this search" href="#"> +Add user's own search configuration (download class or attach link)</a><a class="leave" onclick="PopUpHide3()" title="exit search configuration" href="#"></a>
+            </div>
+        </div>
+        <!-- end of popup CONFIGURE SEARCH PROPERTIES-->
+
+
+        <!--popup REQUEST CALL-->
+        <div class="b-popup" id="popup4">
+            <div class="b-popup-content"><h3 id="rqctit" class="head1">Request Incoming Call</h3><div id="controls4"><div class="minu2" title="Minimize Window" onclick="PopUpHide4()"></div><div class="close2" title="Exit Request Call Wizard" onclick="PopUpHide4()"></div></div>
+                <br/><br/><div id="bordercontainer4">Enter Your name and phone number in fields below,<br/>let us know the most convenient time for you, and wait, we'll call You!<br/><br/><form id="rqcform"><input  class="rqcinputs" type="text" placeholder="Name"/><input  class="rqcinputs" type="number" placeholder="Phone number"/><br/><input  class="rqcinputs" type="text" placeholder="Message(subject)"/><br/><div id="rqctime"><div id="dropdownrqc">
+                    Call me
+                    <div class="dropdowncsp">
+
+                        <span id="rqcdropdown1"> v today</span>
+                        <div class="dropdowncsp-content">
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">today</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">at monday</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">at tuesday</a></div>
+                        </div>
+                    </div>
+
+                    <div class="dropdowncsp">
+
+                        <span id="rqcdropdown"> v right now</span>
+                        <div class="dropdowncsp-content">
+                            <div class="scplistelementcontainer"><a class="csplng" href="#"> call me right now</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">call an hour later</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">call me after work (about 19:00)</a></div>
+                        </div>
+                    </div>
+
+                </div><input  class="rqcinputs" type="time" title="time of incoming call"/></div><br/><br/><br/><br/><div id="butrqc"><input id="buttonrqc" type="submit" title="click ro request incoming call" value="Send this Request"  onclick="PopUpShow4()"/><input id="cancelrqc" type="button" title="click to exit" value="Cancel" onclick="PopUpHide4()"/></div></form></div>
+                Clicking on "Send this Request" You are confirming, that You agreeing with Our <a class="privacypolit" onclick="PopUpShow5()" title="Please, click and read Our Therms And Conditions" href="#">Privacy Policy</a> and You are at least 18 years old. <a class="leave" onclick="PopUpHide4()" title="exit this menu" href="#">No, i don't agree, i'm leaving</a>
+            </div>
+        </div>
+        <!-- end of popup REQUEST CALL-->
+
+
+
+        <!--popup PRIVACY POLICY-->
+        <div class="b-popup" id="popuppp">
+            <div class="b-popup-content"><h3 id="pptit" class="head1">Privacy Policy</h3><div class="controls5"><div class="minu" title="Minimize Window" onclick="PopUpHide5()"></div><div class="close" title="Exit Privacy Policy page" onclick="PopUpHide5()"></div></div>
+                <br/><div class="bordercontainer"><div id="ppscroll">A Privacy Policy agreement is the agreement where you specify if you collect personal data, what kind of personal data you collect from users and what you do with that data.
+
+                    This agreement is required by law if you collect personal data. Personal data is any kind of data or information that can be considered personal (identifies an individual):
+
+                    <br/><br/>Email address
+                    <br/><br/>First and last name
+                    <br/><br/>Billing and shipping address
+                    <br/><br/>Credit card information
+                    <br/><br/>
+                    <br/><br/><br/>https://termsfeed.com/privacy-policy/generator/?ref=blog-sidebar-start-here       see also
+                    And so on</div><div id="okey"><input id="ok" type="submit" onclick="submitFunction()" title="click if You are agree with Therms and Conditions of Вальцанути.net" value="I agree"/><input id="no" type="button" title="click to exit" value="Not agree" onclick="PopUpHide5(), PopUpHide4(), PopUpHide3(), PopUpHide2(), PopUpHideSoc()"/></div></div>
+                Read also <a class="vipplusredir" onclick="PopUpShow5a()" title="click here to read Therms and Conditions" href="#" > Therms and Conditions</a> <br/>          Try our new <a class="vipplusredir" onclick="PopUpShow2(), PopUpHide5()" title="Became VIP Plus" href="#">VIP PLUS Registration </a>(for 1), and You'll be able to see all <a class="vipplusredir"  title="most Selective Forecasts" href="#">Extra Quality Prognoses</a>
+            </div>
+        </div>
+        <!-- end of popup PRIVACY POLICY-->
+
+        <!--popup THERMS AND CONDITIONS-->
+        <div class="b-popup" id="popuptc">
+            <div class="b-popup-content"><h3 id="tctit" class="head1">Therms and Conditions</h3><div class="controls5"><div class="minu" title="Minimize Window" onclick="PopUpHide5a()"></div><div class="close" title="Exit Therms and Conditions page" onclick="PopUpHide5a()"></div></div>
+                <br/><div class="bordercontainer"><div id="tcscroll">
+                    <br/>  A Terms and Conditions agreement is the agreement that includes the terms, <br/>the rules and the guidelines of acceptable behavior, plus other<br/> useful sections, to which users must agree in order to use<br/> or access your website and mobile app.
+
+                    <br/><br/><br/>    Contents
+                    <br/><br/>1 What are Terms and Conditions
+                    <br/><br/>1.1 What to include in a Terms and Conditions
+                    <br/><br/>1.2 Is a Terms and Conditions required?
+                    <br/><br/>1.3 How to enforce Terms and Conditions
+                    <br/><br/>2 Examples of Terms and Conditions
+                    <br/><br/>3 Download Terms and Conditions Template
+                    <br/><br/>What are Terms and Conditions
+
+                    <br/><br/>Terms and Conditions are a set of rules and guidelines that a user must agree to in order to use your website or mobile app. It acts as a legal contract between you (the company) who has the website or mobile app and the user who access your website and mobile app.
+
+                    <br/><br/>It’s up to you to set the rules and guidelines that the user must agree to. You can think of your Terms and Conditions agreement as the legal agreement where you maintain your rights to exclude users from your app in the event that they abuse your app, and where you maintain your legal rights against potential app abusers, and so on.
+                    <br/><br/>Terms and Conditions are also known as Terms of Service or Terms of Use.
+                </div><div id="okeytc"><input id="oktc" type="submit" onclick="submitFunction()" title="click if You are agree with Therms and Conditions of Вальцанути.net" value="I agree"/><input id="notc" type="button" title="click to exit" value="Not agree" onclick="PopUpHide5(),PopUpHide5a(), PopUpHide4(), PopUpHide3(), PopUpHide2(), PopUpHideSoc()"/></div></div>
+                Try our new <a class="vipplusredir" onclick="PopUpShow2(), PopUpHide5a()" title="Became VIP Plus" href="#">VIP PLUS Registration </a>(for 1), and You'll be able to see all <a class="vipplusredir"  title="most Selective Forecasts" href="#">Extra Quality Prognoses</a>
+            </div>
+        </div>
+        <!-- end of popup THERMS AND CONDITIONS-->
+
+
+        <!--popup DONATE-->
+        <div class="b-popup" id="popupd">
+            <div class="b-popup-content"><h3 id="dtit" class="head1">Donate to Project</h3><div class="controls5"><div class="minu" title="Minimize Window" onclick="PopUpHideDonate()"></div><div class="close" title="Exit Donate page" onclick="PopUpHideDonate()"></div></div>
+                <br/><div class="bordercontainer"><div class="scroll" id="scrolldonate"></div><div id="okeyd"><input id="okd" type="submit" onclick="submitFunction()" title="click to donate" value="Donate"/><input id="nod" type="button" title="click to exit" value="Leave" onclick="PopUpHideDonate()"/></div></div>
+                Donate, and You'll automatically became <a class="vipplusredir" onclick="PopUpShow2(), PopUpHideDonate()" title="Became VIP Plus" href="#"> VIP Plus  </a> After that You'll be able to see all <a class="vipplusredir"  title="most Selective Forecasts" href="#">Extra Quality Prognoses</a>
+            </div>
+        </div>
+        <!-- end of popup DONATE-->
+
+        <!--popup SETUP/BASIC/-->
+        <div class="b-popup" id="popupsetup">
+            <div class="b-popup-content"><h3 id="setuptit" class="head1">Configure Basic Settings</h3><div class="controls5"><div class="minu" title="Minimize Window" onclick="PopUpHideSetup()"></div><div class="close" title="Exit Setup Basic" onclick="PopUpHideSetup()"></div></div>
+                <br/><div class="bordercontainer"><div class="scroll" id="scrollsetup">Choose theme:
+
+                    <div class="dropdowncsp">
+
+                        <span id="themedropdown"> v standart</span>
+                        <div class="dropdowncsp-content">
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">standart</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">Passover</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">darkula</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">"бужня"</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">forest</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">predator</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">Irshava</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">special</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">night</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">matrix</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">winter</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">terrarium</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#" title="to plug in Your own (user)style">+other style(add css)</a></div>
+                        </div>
+                    </div>
+                    <br/><br/><br/><br/>Sounds: <div class="dropdowncsp">
+
+                        <span id="sounds"> v disabled</span>
+                        <div class="dropdowncsp-content">
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">disabled</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">enabled</a></div>
+                        </div>
+                    </div>
+
+                    <br/><br/><br/><br/>Voice control mode: <div class="dropdowncsp">
+
+                        <span id="voicecontroldrd"> v disabled</span>
+                        <div class="dropdowncsp-content">
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">disabled</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">enabled</a></div>
+                        </div>
+                    </div>
+
+                    <br/><br/><br/><br/>Font-size (everywhere): <div class="dropdowncsp">
+
+                        <span id="fsize"> v optimal</span>
+                        <div class="dropdowncsp-content">
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">optimal</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">standart</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">medium</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">medium-large</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">large</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">extra-large</a></div>
+                        </div>
+                    </div>
+
+                    <br/><br/><br/><br/>Buttons-style: <div class="dropdowncsp">
+
+                        <span id="bstyle"> v normal</span>
+                        <div class="dropdowncsp-content">
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">normal</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">dynamic</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">hand-draw</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">slot-machine</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">invisible</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">air-bus</a></div>
+                        </div>
+                    </div>
+
+                    <br/><br/><br/><br/>Help-tips language: <div class="dropdowncsp">
+
+                        <span id="tips"> v syncronized(to interface)</span>
+                        <div class="dropdowncsp-content">
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">synchronized(to interface)</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">english</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">ukrainian</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">russian</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">transkarpathian</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">romanian</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">hebrew</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">french</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">italian</a></div>
+                            <div class="scplistelementcontainer"><a class="csplng" href="#">turkish</a></div>
+                        </div>
+                    </div>
+
+
+                </div><div id="setupbuttons"><input id="savesettings" type="submit" onclick="submitFunction()" title="save settings and exit" value="Save"/><input id="exitsetup" type="button" title="exit without saving" value="Exit" onclick="PopUpHideSetup()"/></div></div>
+                Save Your ovn settings for this Portal interfaces.  <a class="vipplusredir" onclick="PopUpShow2(), PopUpHideSetup()" title="Became VIP Plus" href="#"></a>  More  settings: <a class="vipplusredir"  title="extended settings" href="#">Extended Setup</a>
+            </div>
+        </div>
+        <!-- end of popup SETUP/BASIC/-->
+
+
+        <!--popup ABOUT/-->
+        <div class="b-popup" id="popupabout">
+            <div class="b-popup-content"><h3 id="abouttit" class="head1">About Him</h3><div class="controls5"><div class="minu" title="Minimize Window" onclick="PopUpHideAbout()"></div><div class="close" title="Exit this window" onclick="PopUpHideAbout()"></div></div>
+                <br/><div class="bordercontainer"><div class="scroll" id="scrollabout">
+                    In the beginning was the Word, and the Word was with God, and the Word was God.<br/><br/>
+                    The same was in the beginning with God.<br/><br/> In him was life; and the life was the light of men.<br/><br/> And the light shineth in darkness; and the darkness comprehended it not.<br/><br/>
+                    There was a man sent from God, whose name was John.<br/><br/>The same came for a witness, to bear witness of the Light, that all men through him might believe.<br/><br/>He was not that Light, but was sent to bear witness of that Light.<br/><br/>
+                    That was the true Light, which lighteth every man that cometh into the world.<br/><br/>He was in the world, and the world was made by him, and the world knew him not.<br/><br/>
+                    He came unto his own, and his own received him not.<br/><br/>But as many as received him, to them gave he power to become the sons of God, even to them that believe on his name:<br/><br/>
+                    Which were born, not of blood, nor of the will of the flesh, nor of the will of man, but of God.<br/><br/>And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth.<br/><br/>
+
+                </div><div id="aboutbuttons"><input id="okabout" type="submit" onclick="submitFunction()" title="ok" value="Ok"/><input id="exitabout" type="button" title="exit this window" value="Exit" onclick="PopUpHideAbout()"/></div></div>
+                Read more about this Portal and its content:  <a class="vipplusredir" onclick="PopUpShow2(), PopUpHideAbout()" title="Became VIP Plus" href="#"></a><a class="vipplusredir"  title="more about Us" href="#">More about...</a>
+            </div>
+        </div>
+        <!-- end of popup ABOUT-->
+
+
+        <!--popup WRITE US (LIKE)/-->
+        <div class="b-popup" id="popuplike">
+            <div class="b-popup-content"><h3 id="liketit" class="head1">Write Us</h3><div class="controls5"><div class="minu" title="Minimize Window" onclick="PopUpHideLike()"></div><div class="close" title="Exit this window" onclick="PopUpHideLike()"></div></div>
+                <br/><div class="bordercontainer"><div class="scroll" id="scrolllike"><input id="fieldmessage" type="text " placeholder="subject..."/> </div><div id="likebuttons"><input id="oklike" type="submit" onclick="submitFunction()" title="send Your message" value="Send"/><input id="exitlike" type="button" title="exit this window" value="Exit" onclick="PopUpHideLike()"/></div></div>
+                Read more about this Portal and its content:  <a class="vipplusredir" onclick="PopUpShow2(), PopUpHideLike()" title="Became VIP Plus" href="#"></a><a class="vipplusredir"  title="more about Us" href="#">More about...</a>
+            </div>
+        </div>
+        <!-- end of popup WRITE US (LIKE)-->
+
+
+        <!--popup IMPORTANT MESSAGE/-->
+        <div class="b-popup" id="popupimport">
+            <div class="b-popup-content"><h3 id="importtit" class="head1">Message</h3><div class="controls5"><div class="minu" title="Minimize Window" onclick="PopUpHideImport()"></div><div class="close" title="Exit this window" onclick="PopUpHideImport()"></div></div>
+                <br/><div class="bordercontainer"><div class="scroll" id="scrollimport"> Quick Announce ( 25/04/2017 )<br/><br/>
+                    Dear Friend!<br/> We are always ready to help You to solve any questions You have!<br/> Just find the button 24/7 or "request call" and use it to tell us Your ideas.<br/><br/> ANNOUNCE ( 22/04/2017 )<br/><br/>Dear Guest! <br/> Due to that sad news about  freezing registration on the Portal from 22.04.2017 till 10.05.2017 (this happened cause of unexpected technical works we must to complete immediatelly),<br/>thats why we decided to make for everyone of You a Celebrity Gift - until tommorow You may use Secret login an password combination for our Guests<br/> for You may use VIP and VIP Plus mode completelly free for more then two weeks!<br/><br/> Enjoy it, wish You a peace! </div><div id="importbuttons"><input id="okimport" type="submit" onclick="submitFunction()" title="ok" value="Ok"/><input id="exitimport" type="button" title="exit this window" value="Exit" onclick="PopUpHideImport()"/></div></div>
+                Read more about this Portal and its content:  <a class="vipplusredir" onclick="PopUpShow2(), PopUpHideAbout()" title="Became VIP Plus" href="#"></a><a class="vipplusredir"  title="more about Us" href="#">More about...</a>
+            </div>
+        </div>
+        <!-- end of popup IMPORTANT MESSAGE-->
+
+
+
+        <div id="cont31">
+
+
+
+            <div id="leftsb">
+                <ul class="navigation">
+                    <li><a href="http://www.internet-technologies.ru/news" target="_blank">News</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+                    <li><a href="http://www.internet-technologies.ru/articles" target="_blank">Articles</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+                    <li><a href="http://www.internet-technologies.ru/templates" target="_blank">Templates</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+                    <li><a href="http://www.internet-technologies.ru/books" target="_blank">Books</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+                    <li><a href="http://www.internet-technologies.ru/scripts" target="_blank">Projects</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+                    <li><a href="http://www.internet-technologies.ru/books" target="_blank">Photo</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+                    <li><a href="http://www.internet-technologies.ru/lessons" target="_blank">Video</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+                    <li><a href="http://talk.internet-technologies.ru/" target="_blank">Forum</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+                    <li><a href="http://www.internet-technologies.ru/news" target="_blank">Lessons</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+                    <li><a href="http://www.internet-technologies.ru/articles" target="_blank">Links</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+                    <li><a href="http://www.internet-technologies.ru/templates" target="_blank">Contacts</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+
+                    <li><a href="http://www.internet-technologies.ru/scripts" target="_blank">Chat</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+
+                </ul>
+
+                <div id="leftsbdown" >
+                    <ul class="navigation2" id="navigation2">
+                        <li><a href="http://www.internet-technologies.ru/news" target="_blank">Applets</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+                        <li><a href="http://www.internet-technologies.ru/articles" target="_blank">Useful</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+                        <li><a href="http://www.internet-technologies.ru/templates" target="_blank">Researches</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+                        <li><a href="http://www.internet-technologies.ru/books" target="_blank">FAQ</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+                        <li><a href="http://www.internet-technologies.ru/scripts" target="_blank">Work</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+                        <li><a href="http://www.internet-technologies.ru/books" target="_blank">Music</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+                        <li><a href="http://www.internet-technologies.ru/lessons" target="_blank">Clips</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+                        <li><a href="http://talk.internet-technologies.ru/" target="_blank">Join Us</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+                        <li><a href="http://www.internet-technologies.ru/news" target="_blank">Laboratory</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+                        <li><a href="http://www.internet-technologies.ru/articles" target="_blank">Subscribe</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+                        <li><a href="http://www.internet-technologies.ru/templates" target="_blank">Help</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+
+                        <li><a href="http://www.internet-technologies.ru/scripts" target="_blank">Chat VIP</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+                        <li><a href="http://www.internet-technologies.ru/scripts" target="_blank">Chat VIP+</a><div class="contdio"><div class="diode"><div class="redcircle"></div></div></div></li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+
+
+
+            <div id="cent" class="content">
+
+                <div class="startannounce"><div id="perimeter"></div>
+                    Quick Announce ( 25/04/2017 )<br/>
+                    Dear Guest!<br/> We are always ready to help You to solve any questions You have!<br/> Just find the button 24/7 or "request call" and use it <br/> to tell us about Your ideas.
+                </div>
+
+
+                <div id="slider">                               <!-- SLIDER -->
+                    <div id="slider_box"  title="nearest events"> <!-- slider_box-->
+                        <ul>
+                            <li id="img_09" class="showbox slideincrease content" title="make Bet on this event (K=10000)"><br/><br/><br/><h3 class="head1">Not for these only do I pray, but for those also who believe in me through their word</h3>
+                                                             <span class = "explain"> <br/>that they may all be one; even as you, Father, are in me, and I in you, that they also may be one in us; that the world may believe that you sent me</span> <br/>(Gospel acc. to John 17:20)</li>
+                            <li id="img_091" class="showbox slideincrease content" title="make Bet on this event (K=10000)"><br/><h3 class="head1">Purge out the old yeast, that you may be a new lump, even as you are unleavened. For indeed Christ, our Passover, has been sacrificed in our place.</h3>
+                                                             <span class = "explain"> <br/>who was delivered up for our trespasses, and was raised for our justification</span> <br/>(1-st Paul's Letter to Corinthians, 5:7)<br/>(Paul's Letter to Romans 4:25)</li>
+                            <li id="img_092" class="showbox slideincrease content" title="make Bet on this event (K=10000)"><br/><br/><br/><h3 class="head1">For Yahweh will pass through to strike the Egyptians; and when he sees the blood on the lintel, and on the two doorposts, Yahweh will pass over the door, and will not allow the destroyer to come in to your houses to strike you</h3>
+                                                             <span class = "explain"></span><br/>(Exodus, 12:23)</li>
+                            <li id="img_1" class="showbox slideincrease content" title="make Bet on this event (K=1.7)"><br/><br/><br/><br/><h3 class="head1">"Juventus" - "Barcelona": who will make the first step to the semifinal? </h3>
+                                                             <span class = "explain"> <br/> Today at 21: 45Champions League </span> <br/> <br/>In modern history, the teams played with each other quite seldom, the final confrontation was the final of the season 2014/15, when the victory went to the Catalans. Will Juventus at this time stop the Spanish grandee?</li>
+                            <li id="img_2" class="showbox slideincrease" title="make Bet on this event (K=1.1)"><h3 class="head1">England, Premier League</h3> <br/><span class="explain">the start of the match 15.30</span><br/><br/>Chelsi quickly rushes to the championship, but after yesterday's defeat Tottenham "retirees" can further break away from pursuers. However, to beat Burnley in his lair - not an easy task. "Bordeaux" not lose</li>
+                            <li id="img_3" class="showbox slideincrease" title="make Bet on this event (K=1.2)"><h3 class="head1">Sassuolo - Chievo: victory Sassuolo, kf. 1.80</h3><span class="explain">Match starts today at 13:30</span> Sassuolo close to their optimal form. Of 4 recent games in the series "A" "green and black" won 3 and one team, which by that time could not overpower wards Eusebio Di Francesco, was Juventus that great shame can not be called. In today's meeting Chievo vs Sassuolo is going to win. And the chance to do so from the owners certainly will. The main thing - do not miss them.</li>
+                            <li id="img_4" class="showbox slideincrease">Forgive please Lord my God</li>
+                            <li id="img_5" class="showbox slideincrease">article3</li>
+                            <li id="img_6" class="showbox slideincrease">article4</li>
+                            <li id="img_7" class="showbox slideincrease">article5</li>
+                            <li id="img_8" class="showbox slideincrease">article6</li>
+                            <li id="img_9" class="showbox slideincrease">article7</li>
+                            <li id="img_10" class="showbox slideincrease">article8</li>
+                            <li id="img_11" class="showbox slideincrease">last article</li>
+                        </ul>
+                    </div>                                      <!--    end of  slider_box-->
+
+
+
+                    <div id="nav_slider" >                      <!--    navigation of this slider-->
+                        <div id="left_nav" title="forvard to next articles"></div>
+                        <div id="right_nav" title="back to prewievs articles"></div>
+                    </div>                                      <!--    end of the navigation -->
+
+                </div>                                          <!--    SLIDERs END-->
+
+
+
+
+
+                <div class="slider">                               <!-- SLIDER TWO-->
+                    <div class="slider_box"  title="nearest events"> <!-- slider_box-->
+                        <ul>
+                            <li class="img_011 showbox slideincrease content" title="make Bet on this event (K=10000)"><br/><br/><br/><h3 class="head1">Not for these only do I pray, but for those also who believe in me through their word</h3>
+                                                             <span class = "explain"> <br/>that they may all be one; even as you, Father, are in me, and I in you, that they also may be one in us; that the world may believe that you sent me</span> <br/>(Gospel acc. to John 17:20)</li>
+                            <li class="img_012 showbox slideincrease content" title="make Bet on this event (K=10000)"><br/><h3 class="head1">Purge out the old yeast, that you may be a new lump, even as you are unleavened. For indeed Christ, our Passover, has been sacrificed in our place.</h3>
+                                                             <span class = "explain"> <br/>who was delivered up for our trespasses, and was raised for our justification</span> <br/>(1-st Paul's Letter to Corinthians, 5:7)<br/>(Paul's Letter to Romans 4:25)</li>
+                            <li class="img_013 showbox slideincrease content" title="make Bet on this event (K=10000)"><br/><br/><br/><h3 class="head1">For Yahweh will pass through to strike the Egyptians; and when he sees the blood on the lintel, and on the two doorposts, Yahweh will pass over the door, and will not allow the destroyer to come in to your houses to strike you</h3>
+                                                             <span class = "explain"></span><br/>(Exodus, 12:23)</li>
+                            <li class="img_014 showbox slideincrease content" title="make Bet on this event (K=1.7)"><br/><br/><br/><br/><h3 class="head1">"Juventus" - "Barcelona": who will make the first step to the semifinal? </h3>
+                                                             <span class = "explain"> <br/> Today at 21: 45Champions League </span> <br/> <br/>In modern history, the teams played with each other quite seldom, the final confrontation was the final of the season 2014/15, when the victory went to the Catalans. Will Juventus at this time stop the Spanish grandee?</li>
+                            <li class="img_015 showbox slideincrease" title="make Bet on this event (K=1.1)"><h3 class="head1">England, Premier League</h3> <br/><span class="explain">the start of the match 15.30</span><br/><br/>Chelsi quickly rushes to the championship, but after yesterday's defeat Tottenham "retirees" can further break away from pursuers. However, to beat Burnley in his lair - not an easy task. "Bordeaux" not lose</li>
+                            <li class="img_016 showbox slideincrease" title="make Bet on this event (K=1.2)"><h3 class="head1">Sassuolo - Chievo: victory Sassuolo, kf. 1.80</h3><span class="explain">Match starts today at 13:30</span> Sassuolo close to their optimal form. Of 4 recent games in the series "A" "green and black" won 3 and one team, which by that time could not overpower wards Eusebio Di Francesco, was Juventus that great shame can not be called. In today's meeting Chievo vs Sassuolo is going to win. And the chance to do so from the owners certainly will. The main thing - do not miss them.</li>
+                            <li class="img_017 showbox slideincrease">Forgive please Lord my God</li>
+                            <li class="img_018 showbox slideincrease">article3</li>
+                            <li class="img_019 showbox slideincrease">article4</li>
+                            <li class="img_020 showbox slideincrease">article5</li>
+                            <li class="img_021 showbox slideincrease">article6</li>
+                            <li class="img_022 showbox slideincrease">article7</li>
+                            <li class="img_023 showbox slideincrease">article8</li>
+                            <li class="img_024 showbox slideincrease">last article</li>
+                        </ul>
+                    </div>                                      <!--    end of  slider_box-->
+
+
+
+                    <div class="nav_slider" >                      <!--    navigation of this slider-->
+                        <div class="left_nav" title="forvard to next articles"></div>
+                        <div class="right_nav" title="back to prewievs articles"></div>
+                    </div>                                      <!--    end of the navigation -->
+                </div>                                          <!--    SLIDERs TWO END-->
+
+
+
+
+
+
+            </div>
+
+            <div id="rightcontainer">
+                <div id="rightsb"> <ul class="navigation">
+                    <li id="rightbutton1"><a href="http://www.internet-technologies.ru/news" target="_blank">Useful</a></li></ul></div>
+                <div id="downrightsb"></div>
+            </div>
+
+
+        </div></div>
+
+
+
+    </article>
+
+
+   <div id="donate" onclick="PopUpShowDonate()" title="Donate to this Project"></div><div id="coins"></div>
+    <div id="foots"><input type="button" id="like" onclick="PopUpShowLike()" title="press to tell us what You like or not like" value="Write Us what You Like/Dislike"/><div id="sharelikepane">testStringSharelikepane<div id="tinypanea"><div id="uzor">+ pane</div></div><div id="bigpanea">Test String Small Pane A</div></div><div id="lawcons" title="qualificied lawyer consultation"><div id="v"><div id="textla">Legal Advice</div></div></div><a href="#" title="Return to Head" id="topbutton">^Scroll to Top<div id="mice"></div></a></div>
+
+
+    <div id="consultant">
+        <!-- webim button generation date: 2017-04-12 version: 8.16.35 -->
+        <a class="webim_button" href="#" rel="webim"><img src="https://19314221910588webservertest3.webim.ru/button.php" border="0"/></a>
+        <script type="text/javascript">
+            webim = {
+                accountName: "19314221910588webservertest3",
+                domain: "19314221910588webservertest3.webim.ru"
+            };
+            (function () {
+                var s = document.createElement("script");
+                s.type = "text/javascript";
+                s.src = "https://19314221910588webservertest3.webim.ru/js/button.js";
+                document.getElementsByTagName("head")[0].appendChild(s);
+            })();
+        </script>
+        <!-- /webim button -->
+    </div>
+
+
+
+
+    <footer>
+
+        all rights reserved - Вальцанути.NET 2017 <a class="vipplusredir" onclick="PopUpShow5()" title="click here to see Our Privacy Policy" href="#" >Privacy Policy</a><a class="vipplusredir" onclick="PopUpShow5a()" title="click here to read Therms and Conditions" href="#" > Therms and Conditions</a>
+
+    </footer>
+</body>
+</html>

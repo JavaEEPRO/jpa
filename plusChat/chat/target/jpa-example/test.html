@@ -1,0 +1,211 @@
+<html>
+<head>
+    <title>WOweb.ru - Scripts - JavaScript - PageScroll</title>
+    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <META NAME="description" CONTENT="Коллекции CGI, PHP, JavaScript скриптов, Java апплеты, огромное количество документации по разным языкам программирования, анимированные гифы, фоны, полезные программы, форум, ссылки по теме.">
+    <META NAME="keywords" CONTENT="perl scripts, perl, cgi scripts, cgi, перл, java, java scripts, веб-программирование, web-programming,  html,  каталог ссылок, документация по веб-программированию, cgi скрипты, java скрипты, игры, java апплеты,  апплеты, гифы, скрипты, скрипт, книги по веб-программированию, форум по perl, CGI, Perl, script, HTML">
+    <Style>
+        A:Link{ Color: white; Text-decoration: underline}
+        A:Visited{ Color: white; Text-decoration: underline}
+        A:Hover{ Color: white; Text-decoration: none}
+        td, body {font-family: verdana, arial, helvetica; font-size:11px;}
+    </Style>
+
+    <!-- HEAD START HERE -->
+
+    <style type="text/css">
+        #divControl {position:absolute; left:120px; top:190px; width:250px; font-size:10pt; font-family:arial,helvetica,sans-serif; visibility:hidden;}
+        #divCont    {position:absolute; left:120px;top:250px; width:250px; height:150px; clip:rect(0px 250px 150px 0px);}
+        .clScroll   {position:absolute; font-size:10pt; font-family:arial,helvetica,sans-serif; visibility:hidden;}
+    </style>
+    <script language="JavaScript" type="text/javascript">
+        /**********************************************************************************
+         PageScroll
+         *   Copyright (C) 2001 <a href="/dhtmlcentral/thomas_brattli.asp">Thomas Brattli</a>
+         *   This script was released at DHTMLCentral.com
+         *   Visit for more great scripts!
+         *   This may be used and changed freely as long as this msg is intact!
+         *   We will also appreciate any links you could give us.
+         *
+         *   Made by <a href="/dhtmlcentral/thomas_brattli.asp">Thomas Brattli</a>
+         *********************************************************************************/
+
+        function lib_bwcheck(){ //Browsercheck (needed)
+            this.ver=navigator.appVersion
+            this.agent=navigator.userAgent
+            this.dom=document.getElementById?1:0
+            this.opera5=this.agent.indexOf("Opera 5")>-1
+            this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom && !this.opera5)?1:0;
+            this.ie6=(this.ver.indexOf("MSIE 6")>-1 && this.dom && !this.opera5)?1:0;
+            this.ie4=(document.all && !this.dom && !this.opera5)?1:0;
+            this.ie=this.ie4||this.ie5||this.ie6
+            this.mac=this.agent.indexOf("Mac")>-1
+            this.ns6=(this.dom && parseInt(this.ver) >= 5) ?1:0;
+            this.ns4=(document.layers && !this.dom)?1:0;
+            this.bw=(this.ie6 || this.ie5 || this.ie4 || this.ns4 || this.ns6 || this.opera5)
+            return this
+        }
+        var bw=new lib_bwcheck()
+
+
+        /*********************************************************************************
+         These are the variables you have to set:
+         *********************************************************************************/
+
+//The speed of the timeout between each scroll.
+        timSpeed = 50
+
+        //The height of the container (change this when it scrolls to much or to little)
+        contHeight = 100
+
+        /*********************************************************************************
+         This is the object constructor function, which applies
+         methods and properties to the Cross-browser layer object
+         *********************************************************************************/
+        function makeScrollObj(obj,nest){
+            nest=(!nest) ? "":'document.'+nest+'.'
+            this.el=bw.dom?document.getElementById(obj):bw.ie4?document.all[obj]:bw.ns4?eval(nest+'document.'+obj):0;
+            this.css=bw.dom?document.getElementById(obj).style:bw.ie4?document.all[obj].style:bw.ns4?eval(nest+'document.'+obj):0;
+            this.height=bw.ns4?this.css.document.height:this.el.offsetHeight
+            this.top=b_gettop
+            return this
+        }
+
+        // A unit of measure that will be added when setting the position of a layer.
+        var px = bw.ns4||window.opera?"":"px";
+
+        //Getting the top for the top method
+        function b_gettop(){
+            var gleft=(bw.ns4 || bw.ns6)?parseInt(this.css.top):eval(this.css.pixelTop);
+            return gleft;
+        }
+        //Variables
+        var scrollTim = 1;
+        var active = 0;
+        /*********************************************************************************
+         The scroll function. Checks what way to scroll and checks if the
+         layer is not already on top or bottom.
+         *********************************************************************************/
+        function scroll(speed){
+            clearTimeout(scrollTim)
+            way = speed>0?1:0
+            if ((!way && oScroll[active].top()>-oScroll[active].height+contHeight) || (oScroll[active].top()<0 && way)){
+                oScroll[active].css.top = (oScroll[active].top()+speed)+px
+                scrollTim = setTimeout("scroll("+speed+")",timSpeed)
+            }
+        }
+        //Clears the timeout so the scroll stops, this is called onmouseout.
+        function noScroll(){
+            clearTimeout(scrollTim)
+        }
+        /*********************************************************************************
+         Changes the active layer. Hides the one that's visible and
+         shows the "new" one. Also set's the new layers top to
+         0 so it starts at top.
+         *********************************************************************************/
+        function changeActive(num){
+            oScroll[active].css.visibility = "hidden"
+            active = num
+            oScroll[active].css.top = 0+px
+            oScroll[active].css.visibility = "visible"
+        }
+        /*********************************************************************************
+         Initilizes the page, makes a oScroll Array and calls the object constructor.
+         Here you can add as many scrollObjects as you want
+         *********************************************************************************/
+        function scrollInit(){
+            oScroll = new Array()
+
+            // You can add and remove scrollObjects here.
+            oScroll[0] = new makeScrollObj('divScroll1','divCont')
+            oScroll[1] = new makeScrollObj('divScroll2','divCont')
+            oScroll[2] = new makeScrollObj('divScroll3','divCont')
+            oScroll[3] = new makeScrollObj('divScroll4','divCont')
+
+            oScroll[0].css.left = 0+px
+            oScroll[0].css.top = 0+px
+            oScroll[0].css.visibility = "visible"
+            oControl = new makeScrollObj('divControl')
+            oControl.css.visibility = "visible"
+        }
+        /*********************************************************************************
+         Executes the scrollInit function on pageload.
+         *********************************************************************************/
+        onload = scrollInit;
+
+        /***************
+         Multiple Scripts
+         If you have two or more scripts that use the onload event, probably only one will run (the last one).
+         Here is a solution for starting multiple scripts onload:
+         1. Delete or comment out all the onload assignments, onload=initScroll and things like that.
+         2. Put the onload assignments in the body tag like in this example, note that they must have braces ().
+         Example: <body onload="initScroll(); initTooltips(); initMenu();">
+         **************/
+    </script>
+
+    <!-- HEAD END HERE -->
+
+
+
+
+</head>
+<body bgcolor="#737994" text="#FFFFFF" link="#FFFFFF" topmargin="0" leftmargin="0">
+
+
+
+<!-- BODY START HERE -->
+
+
+<div id="divControl">
+    <a href="#" onclick="changeActive(0); return false">Page 1</a>
+    <a href="#" onclick="changeActive(1); return false">Page 2</a>
+    <a href="#" onclick="changeActive(2); return false">Page 3</a>
+    <a href="#" onclick="changeActive(3); return false">Page 4</a>
+    <br><br>
+    <a href="#" onmouseover="scroll(5)" onmouseout="noScroll()" onclick="return false">Down</a>
+    <a href="#" onmouseover="scroll(-5)" onmouseout="noScroll()" onclick="return false">Up</a>
+</div>
+<div id="divCont">
+    <div id="divScroll1" class="clScroll">
+        This is "page" 1, here you place some content.
+        You should place more content then this
+        or it won't scroll..blablablabl<br>
+        <br>text text dummy texttext text dummy texttext text dummy text<br>
+        <br>text text dummy text text text dummy text text text dummy text <br>
+    </div>
+
+    <div id="divScroll2" class="clScroll">
+        This is "page" 2...........
+        <br>text textdummy texttext text dummy texttext text dummy text<br>
+        <br>text text dummy text text text dummy text text text dummy text <br>
+        text text dummy texttext text dummy texttext text dummy text<br>
+        <br>text text dummy text text text dummy text text text dummy text <br>
+        <br>text textdummy texttext text dummy texttext text dummy text<br>
+        <br>text text dummy text text text dummy text text text dummy text <br>
+        text text dummy texttext text dummy texttext text dummy text<br>
+        <br>text text dummy text text text dummy text text text dummy text <br>
+    </div>
+
+    <div id="divScroll3" class="clScroll">
+        This is "page" 3...........(can't scroll this one, to little content)
+        <br>
+    </div>
+
+    <div id="divScroll4" class="clScroll">
+        Page 4
+        text text dummy texttext text dummy texttext text dummy text<br>
+        <br>ext text dummy texttext text dummy texttext text dummy text<br>
+        <br>text text dummy texttext text dummy texttext text dummy text<br>
+        <br>text text dummy texttext text dummy texttext text dummy text<br>
+        <br>text text dummy texttext text dummy texttext text dummy text<br>
+    </div>
+</div>
+
+
+<!-- BODY END HERE -->
+
+
+
+
+</body>
+</html>

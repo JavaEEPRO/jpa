@@ -1,0 +1,7 @@
+boostbrain\items\ItemsList.class
+boostbrain\model\FormValidation.class
+boostbrain\ExampleEJB.class
+boostbrain\managers\ItemListManager.class
+boostbrain\ExampleCDI.class
+boostbrain\items\Item.class
+boostbrain\model\UserEntity.class
