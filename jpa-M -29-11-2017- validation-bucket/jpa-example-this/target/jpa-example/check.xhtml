@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+
+</h:head>
+<h:body>
+    <h:form>
+        <h:panelGrid columns="2">
+            <h:outputText value="Login: "/>
+            <h:inputText value="#{exampleCDI.login}" />
+
+            <h:outputText value="Password: "/>
+            <h:inputText value="#{exampleCDI.password}" />
+
+            <h:outputText value="Action: "/>
+            <h:commandLink value="Check" action="#{exampleCDI.checkPassword()}"/>
+        </h:panelGrid>
+    </h:form>
+    <br/><br/>
+    <h:form>
+        <h:commandButton value="return home" action="index" />
+    </h:form>
+
+    <h:panelGrid columns="2">
+        <h:outputLabel></h:outputLabel>
+    </h:panelGrid>
+
+    <br/><br/>
+    <br/><br/>
+
+    <h:dataTable value="#{exampleCDI.getItemsToSell}" var="user">
+        <h:column>
+            <h:outputText value="#{item.name}" />
+        </h:column>
+
+        <h:column>
+            <h:outputText value="#{item.price}" />
+        </h:column>
+    </h:dataTable>
+    <br/><br/>
+
+</h:body>
+</html>
